@@ -8,4 +8,27 @@
     <artifactId>exo-iv-extension</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging>
+
+
+    <properties>
+        <exoplatform.version>4.3.0</exoplatform.version>
+    </properties>
+
+    <build>
+        <finalName>exo-iv-extension</finalName>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.exoplatform.platform</groupId>
+                <artifactId>platform</artifactId>
+                <version>${exoplatform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>

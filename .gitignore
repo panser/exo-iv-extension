@@ -1,0 +1,8 @@
+**/*.iml
+**/.idea
+**/target
+.idea/
+exo-iv-extension.iml
+src/main/java/
+src/main/resources/
+src/test/
