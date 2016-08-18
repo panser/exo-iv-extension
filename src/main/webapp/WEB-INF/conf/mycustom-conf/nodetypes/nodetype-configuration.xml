@@ -1,0 +1,30 @@
+<nodeTypes xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+           xmlns:jcr="http://www.jcp.org/jcr/1.0">
+
+    <nodeType name="exo:article" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+
+        <supertypes>
+            <supertype>nt:base</supertype>
+            <supertype>mix:referenceable</supertype>
+            <supertype>exo:rss-enable</supertype>
+        </supertypes>
+
+        <propertyDefinitions>
+            <propertyDefinition name="exo:text" requiredType="String" autoCreated="false" mandatory="false"
+                                onParentVersion="COPY"
+                                protected="false" multiple="false">
+                <valueConstraints/>
+            </propertyDefinition>
+        </propertyDefinitions>
+
+        <childNodeDefinitions>
+            <childNodeDefinition name="*" defaultPrimaryType="nt:file" autoCreated="false" mandatory="false"
+                                 onParentVersion="COPY" protected="false" sameNameSiblings="true">
+                <requiredPrimaryTypes>
+                    <requiredPrimaryType>nt:file</requiredPrimaryType>
+                </requiredPrimaryTypes>
+            </childNodeDefinition>
+        </childNodeDefinitions>
+
+    </nodeType>
+</nodeTypes>
