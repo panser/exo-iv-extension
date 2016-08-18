@@ -1,0 +1,35 @@
+<%
+    import org.exoplatform.ecm.webui.utils.Utils;
+%>
+
+<style>
+<%
+ _ctx.include(uicomponent.getTemplateSkin("exo:article", "Stylesheet"));
+%>
+</style>
+
+<div id="$uicomponent.id">
+
+    <%
+        def node = uicomponent.getNode();
+    %>
+
+    <p>Title: <%=Utils.getTitle(node)%></p>
+
+    <p>Summary: <%=node.getProperty("exo:summary").getString()%></p>
+
+    <p>Content: <%=node.getProperty("exo:text").getString()%></p>
+
+    <%
+        try {
+            _ctx.include(uicomponent.getViewTemplate("mix:votable", "view1"));
+        } catch (Exception e) {
+        }
+
+        try {
+            _ctx.include(uicomponent.getViewTemplate("exo:comments", "view1"));
+        } catch (Exception e) {
+        }
+    %>
+
+</div>
